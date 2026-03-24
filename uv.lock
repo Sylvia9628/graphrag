@@ -1075,7 +1075,7 @@ requires-dist = [
     { name = "graspologic-native", specifier = "~=1.2" },
     { name = "json-repair", specifier = "~=0.30" },
     { name = "networkx", specifier = "~=3.4" },
-    { name = "nltk", specifier = "==3.9.1" },
+    { name = "nltk", specifier = "==3.9.3" },
     { name = "numpy", specifier = "~=2.1" },
     { name = "pandas", specifier = "~=2.3" },
     { name = "pyarrow", specifier = "~=22.0" },
