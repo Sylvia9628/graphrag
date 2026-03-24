@@ -76,11 +76,9 @@ class CommunityReportsExtractor:
         output = None
         try:
             prompt = self._extraction_prompt.replace("{{input_text}}", input_text).replace("{input_text}", input_text).replace("{max_report_length}", str(self._max_report_length))
-            response = await self._model.achat(
-                prompt,
-                json=True,  # Leaving this as True to avoid creating new cache entries
-                name="create_community_report",
-                json_model=CommunityReportResponse,  # A model is required when using json mode
+            response = await self._model.completion_async(
+                messages=prompt,
+                response_format=CommunityReportResponse,  # A model is required when using json mode
             )
 
             output = response.formatted_response  # type: ignore
